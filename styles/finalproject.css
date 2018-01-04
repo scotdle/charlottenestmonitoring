@@ -1,0 +1,607 @@
+  html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+
+
+
+.form-control {
+font-size: 25px;    
+    
+    
+}
+
+h1 {
+    
+font-size: 55px;    
+    
+}
+
+
+.form-add-on {
+font-family:'FontAwesome','Fjalla One';  
+text-indent: 10px;
+border-radius: 15px;
+border: 1px solid #add9f4;  
+background-color: white; 
+height: 50px;
+text-align: center;
+    
+}
+
+.logo {
+padding: 10px;    
+    
+    
+}
+
+
+/*
+LOGIN PAGE STARTS
+*/
+
+.loginpage{
+font-family: 'Fjalla One', sans-serif; 
+position: relative;
+color: orange;
+min-height: 100%;    
+font-size: 20px; 
+text-align: center;
+background-image: url(../images/loginbackground.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+text-decoration: none;
+    
+}
+.loginpageform  {
+    
+background-color: rgba(255, 255, 255, 0.74);
+background-position: 10px 25px;    
+padding: 10px;  
+text-align: center;
+ width: 80%;
+  margin: 0 auto; 
+border-radius: 15px;      
+}
+
+.loginpage a{
+color: cornflowerblue;    
+    
+}
+
+ .loginpage a:hover {
+text-decoration: none;
+ color:black; 
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;
+    }
+
+.loginalerts {
+font-size: 30px;    
+color:cornflowerblue;
+    
+    
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+/*
+LOGIN PAGE ENDS
+*/
+
+/*
+REGISTER PAGE STARTS
+*/
+
+.registerpage{
+font-family: 'Fjalla One', sans-serif; 
+position: relative;
+color: orange;
+min-height: 100%;    
+font-size: 20px; 
+text-align: center;
+background-image: url(../images/registerbackground.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+text-decoration: none;
+padding: 15px;    
+}
+
+.registerpageform  {
+    
+background-color: rgba(255, 255, 255, 0.74);
+background-position: 10px 25px;    
+padding: 10px;  
+text-align: center;
+ width: 80%;
+  margin: auto; 
+    
+    border-radius: 15px;   
+}
+
+.registerpage a{
+color: black;    
+    
+}
+
+ .registerpage a:hover {
+text-decoration: none;
+ color:cornflowerblue; 
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;   
+    
+    
+}
+
+
+
+
+/*
+REGISTER PAGE ENDS
+*/
+
+/*
+EDIT PROFILE PAGE STARTS
+*/
+
+.editprofilepictureform  {
+    
+background-color: rgba(255, 255, 255, 0.74);
+background-position: 10px 25px;    
+padding: 10px;  
+text-align: center;
+
+  margin: auto; 
+    
+    border-radius: 15px;   
+}
+
+
+/*
+EDIT PROFILE PAGE ENDS
+*/
+
+
+/*
+LOGINCHECK STARTS
+*/
+
+.logincheck{
+    
+font-family: 'Fjalla One', sans-serif; 
+font-size: 50px;
+text-decoration: none;
+text-align: center;
+height: 100%;
+    
+}
+
+.logincheck h1 {
+font-size: 50px;       
+color:orange;    
+  
+}
+/*
+LOGINCHECK ENDS
+*/
+
+
+/*
+EDIT PAGE STARTS
+*/
+
+.editpage, .addpage{
+font-family: 'Fjalla One', sans-serif; 
+position: relative;
+color: orange;
+min-height: 100%;    
+font-size: 20px; 
+text-align: center;
+background: url(../images/loginbackground.jpg)no-repeat center center;
+background-repeat: no-repeat;
+background-size: cover;
+text-decoration: none;
+padding: 15px;    
+    
+}
+.editpageform, .addpageform  {
+    
+background-color: rgba(255, 255, 255, 0.74);
+background-position: 10px 25px;    
+padding: 10px;  
+text-align: center;
+ width: 90%;
+  margin: 0 auto; 
+border-radius: 15px;      
+}
+
+.editpageform a{
+color: black; 
+text-decoration: none;    
+    
+}
+
+
+.editpageerror{
+font-family: 'Fjalla One', sans-serif; 
+position: relative;
+color: orange;
+min-height: 100%;    
+font-size: 60px; 
+text-align: center;    
+    
+}
+
+.editpageform  a:hover {
+text-decoration: none;
+ color:orange; 
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;
+    }
+
+
+
+
+
+/*
+EDIT PAGE ENDS
+*/
+
+/*
+DELETE PAGE STARTS
+*/
+.deleterecord{
+font-family: 'Fjalla One', sans-serif; 
+position: relative;
+color: orange;
+min-height: 100%;    
+font-size: 20px; 
+text-align: center;
+
+    
+}
+
+.deletecheck {
+position: absolute;        
+width: 100%;  
+bottom: 200px; 
+padding: 15px;
+}
+
+/*
+DELETE PAGE ENDS
+*/
+
+/*
+FOOTER STARTS
+*/
+
+.footer {
+    font-family: 'Oswald', sans-serif; 
+    display: inline;
+ 
+    
+}
+
+/*
+FOOTER ENDS
+*/
+
+.submit {
+    font-family:'FontAwesome','Fjalla One'; 
+    
+}
+
+.submit:hover {
+text-decoration: none;
+ color:#add9f4; 
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;
+    }
+
+
+/* MAIN TABLE NAV STARTS */
+.navbar-header .navbar-brand {
+  height: 70px;
+padding: 5px;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    
+    font-family: 'Fjalla One', sans-serif; 
+    color: rgba(119, 119, 119, 1);
+    
+}
+#custom-bootstrap-menu.navbar-default {
+    font-family: 'Fjalla One', sans-serif; 
+    font-size: 25px;
+    background-color: rgba(173, 217, 244, 1);
+    border: 0px;
+    
+    
+}
+
+
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: black;
+    background-color: rgba(248, 248, 248, 0);
+      height: 70px;
+    line-height: 40px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover
+ {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(100, 149, 237, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(255, 174, 0, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #ffae00;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #ffae00;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffae00;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #add9f4;
+}
+
+
+
+/* MAIN TABLE NAV ENDS */
+
+
+
+/* MAIN TABLE CONTENT STARTS */
+
+.mainpagesection1 {
+    position: relative;
+   font-family: 'Fjalla One', sans-serif; 
+    font-size: 55px; 
+    color: #add9f4;
+    text-align: center;
+    line-height: 100px;
+ background-image: url(../images/nestlings.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+text-decoration: none;      
+    
+    
+    
+}
+
+
+.transparency {
+background-color:  rgba(255, 255, 255, 0.5);
+    
+}
+
+
+
+.mainpagesection2 {
+position: relative;
+text-align: center;    
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+background-repeat: no-repeat;
+background-size: cover;
+text-decoration: none;   
+padding-bottom: 70px;  
+    
+}
+
+#searchTable{
+font-family: 'Fjalla One', sans-serif;     
+height: 70px;
+width: 100%;
+float: left;
+font-size: 30px;
+text-align: center;
+background-color: rgba(174, 217, 244, 0.58);  
+   border-style: solid;
+    border-color: black;    
+    
+    
+    
+    
+}
+
+
+table a {
+    
+ color: orange;
+ 
+    
+    
+}
+
+table a:hover {
+text-decoration: none;
+ color:cornflowerblue; 
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;
+    }
+th, td {
+    font-family: 'Oswald';
+    border: solid black 1px; 
+    font-size: 20px;
+padding: 5px;
+text-align: center;
+background-color: white;    
+}
+
+.profilepic {
+    
+width: 140px;
+height: 140px; 
+padding: 10px;    
+    
+}
+
+.submittedbypicture {
+    
+width: 100px;
+height: 100px;
+    
+    
+}
+
+.description {
+    font-family: 'Oswald';
+    font-size: 18px;
+    text-align: left;
+    }
+
+
+.tablesection {
+padding: 10px;    
+    
+    
+    
+    
+}
+
+.tablesectionstyling  {
+
+    border: 1px solid black;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px;
+    
+    
+}
+
+.tabledescription {
+    font-size: 18px;
+    
+    
+}
+
+#nestTable {
+padding-bottom: 20px;    
+    
+    
+    
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.databasefacts {
+	
+background-color: rgba(255, 255, 255, 0.49);	
+	
+}
+
+.databasefacttext { 
+border-bottom: 1px solid #add9f4;
+margin: 15px;
+    
+}
+
+
+.nestingseason {
+padding-bottom:     
+    
+    
+}
+
+.editdelete a {
+    
+    color: orange;
+    
+    
+}
+
+.useractions {
+	
+float:right;
+	
+}
+
+ /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        
+        
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+
+ /* Smartphone  */
+   @media only screen and (min-width : 240px)  and (max-width : 868px) {
+      #container{
+          width: 100%;
+      }
+      table.gridtable {
+          width: 100%;
+      }		
+      table th {
+          display: none;
+      }
+      table tr {
+          display: block;
+          
+      }
+      table td {
+          display: block;
+          text-align: right;
+          font-size: 20px;
+          margin-bottom: 1px;
+          min-height: 14px
+      }
+      table td:before {
+          content: attr(data-label);
+          float: left;
+          
+      }
+   }
+
+
+
+
+/* MAIN TABLE CONTENT ENDS */
+
