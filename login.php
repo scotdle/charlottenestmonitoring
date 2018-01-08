@@ -16,11 +16,11 @@
         
 if(password_verify($password, $row['password']  ))
 	{
-    
-    
-     $_SESSION["username"] = $_POST["username"];
+
+	    $_SESSION["id"] = $row['id'];
+     $_SESSION['username'] = $_POST['username'];
     $_SESSION["name"] = $row['name'];
-    $name = $_SESSION["name"];
+    $name = $_SESSION['name'];
 	   $logintext = "Welcome back " . $name . "! flying you to your homepage";
         $accountcreation = " ";    
 echo "<script>

@@ -13,7 +13,7 @@ $howmany = $_POST['howmany'];
 $location = $_POST['location'];
 $description = $_POST['description'];
 $possiblespecies = $_POST['possiblespecies'];
-    
+
 
 
 $location = mysqli_real_escape_string($mysqli, $location);
@@ -23,12 +23,16 @@ $id = $_POST["id"];
 if(isset($_POST['submit'])) {  
     
 if(isset($_POST['eggornestling'])) {
-  
-  
-    
-$sql= "INSERT INTO nesttable (userwhosubmitted, profilepicfile, datesubmitted,  eggsornestlings, howmany, location, description, possiblespecies)
+	$getuserid ="SELECT * FROM users WHERE username = '$username'";
+	$result = mysqli_query($mysqli, $getuserid);
+
+	$submittinguser = mysqli_fetch_array($result);
+$currentuserid= $submittinguser['id'];
+
+
+	$sql= "INSERT INTO nesttable (userid,  datesubmitted,  eggsornestlings, howmany, location, description, possiblespecies)
 VALUES
-('$username' , '$profilepicfile' , CURDATE() , '$eggornestling' , '$howmany' , '$location' , '$description' , '$possiblespecies')";    
+('$currentuserid' ,  CURDATE() , '$eggornestling' , '$howmany' , '$location' , '$description' , '$possiblespecies')";
     
 if (!mysqli_query($mysqli, $sql))
   {
