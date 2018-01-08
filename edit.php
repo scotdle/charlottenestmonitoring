@@ -4,8 +4,8 @@ session_start();
 include('styles.php');
 include('credentialslocal.php'); 
     
-    $id = $_GET['id'];
-$result = mysqli_query($mysqli, "SELECT * FROM nesttable WHERE id=$id");
+    $nestid = $_GET['id'];
+$result = mysqli_query($mysqli, "SELECT * FROM nesttable WHERE nestid=$nestid");
       while ($row=mysqli_fetch_assoc($result))
 
       {   
@@ -19,7 +19,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM nesttable WHERE id=$id");
       }
        
 //getting id from url
-if($userwhosubmitted !== $_SESSION['username'])
+ /*if($userwhosubmitted !== $_SESSION['username'])
 
 {
     
@@ -39,10 +39,10 @@ window.setTimeout(function(){
     die();
     
 }
-    
+    */
 if($_SERVER['REQUEST_METHOD']=='POST') {
     
-    $id = $_GET['id'];
+    $nestid = $_GET['id'];
 
  $eggornestling = $_POST['eggornestling'];
 $howmany = $_POST['howmany'];
@@ -56,7 +56,7 @@ $description = mysqli_real_escape_string($mysqli,$description);
 $possiblespecies = mysqli_real_escape_string($mysqli, $possiblespecies);
 
 
- mysqli_query($mysqli, "UPDATE nesttable SET eggsornestlings= '$eggornestling', lastedited = CURDATE() ,  howmany= '$howmany', location= '$location', description= '$description', possiblespecies= '$possiblespecies' WHERE id=$id");
+ mysqli_query($mysqli, "UPDATE nesttable SET eggsornestlings= '$eggornestling', lastedited = CURDATE() ,  howmany= '$howmany', location= '$location', description= '$description', possiblespecies= '$possiblespecies' WHERE nestid=$nestid");
  
 $updated = '<a href="maintable.php#nesttable"> Done Editing? Head back to the Nest Table</a>';  
     

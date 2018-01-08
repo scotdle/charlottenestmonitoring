@@ -1,12 +1,8 @@
 <?php
 session_start();
-
-
 include('styles.php');
 include('credentialslocal.php');
 
-
-       
         //escapes special characters in a string
 
 $username = $_SESSION['username'];
@@ -16,7 +12,7 @@ while ($row=mysqli_fetch_assoc($result)) {
     
 $name= $row['name'];
 $favoritebird= $row['favoritebird'];
-$profilepicfile = $row['profilepic'];    
+$profilepicfile = $row['profilepic'];
  
     } 
 if (empty($profilepicfile))
@@ -142,7 +138,6 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
 
                     </div>
 
-                
                 <input type="text" id="searchTable" placeholder="Search Through the CNM Database!" >
                 </div>
 
@@ -157,9 +152,9 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
                             <?php 
 
     
-    $selectfromnesttable= "SELECT * FROM nesttable";
+    $selectfromnesttable= "SELECT * FROM nesttable 
+INNER JOIN users ON nesttable.userid = users.id ";
      
-
 
 $records= mysqli_query($mysqli, $selectfromnesttable);
 
@@ -176,26 +171,24 @@ while ( $nest = mysqli_fetch_assoc( $records ) ) {
                                 <th>Description of Nest</th>
                                 <th>Possible Species?</th>';
 
-		                            if($username===$nest['userwhosubmitted'])  {
+		                            if($_SESSION['id']===$nest['id'])  {
 
 		                            echo '<th>Edit || Delete </th>';
 
-
-
-			                            }
+		                            }
 
 		                            echo "</tr>";
 		                            echo "<tr>";
-		                            echo "<td data-label='Submitted By:' >" . "<img src='images/profilepics/" . $nest['profilepicfile'] . "'" . "class= 'img-circle submittedbypicture' > <br>" . $nest['userwhosubmitted'] . "</td>";
+		                            echo "<td data-label='Submitted By:' >" . "<img src='images/profilepics/" . $nest['profilepic'] . "'" . "class= 'img-circle submittedbypicture' > <br>" . $nest['username'] . "</td>";
 		                            echo "<td  data-label='Date Submitted:' >" . $nest['datesubmitted'] . "<br> Last Edited: <br> " . $nest['lastedited'] . "</td>";
 		                            echo "<td data-label='Egg or Nestling:' >" . $nest['eggsornestlings'] . "</td>";
 		                            echo "<td  data-label='How Many:'>" . $nest['howmany'] . "</td>";
 		                            echo "<td  data-label='Location:'>" . $nest['location'] . "</td>";
 		                            echo "<td  data-label='Description:'>" . $nest['description'] . "</td>";
 		                            echo "<td  data-label='Possible Species:'>" . $nest['possiblespecies'] . "</td>";
-                            if($username===$nest['userwhosubmitted']) {
+                            if($_SESSION['id']===$nest['id']) {
 
-	                            echo "<td><a href=\"edit.php?id=$nest[id]\">Edit</a> // <a href=\"delete.php?id=$nest[id]\">Delete</a></td>";
+	                            echo "<td><a href=\"edit.php?id=$nest[nestid]\">Edit</a> // <a href=\"delete.php?id=$nest[nestid]\">Delete</a></td>";
                             }
 		                            echo "</tr>";
 		                            echo "</table>";

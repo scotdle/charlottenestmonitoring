@@ -20,8 +20,6 @@ $username =  $_SESSION['username'];
           
       }
 
-?>
-    <?php 
 
 if(isset($_POST['submit'])) {
         $name = $_POST['name'];
@@ -35,12 +33,16 @@ if(isset($_POST['submit'])) {
 
 
  mysqli_query($mysqli, "UPDATE users SET name= '$name', username= '$username', favoritebird= '$favoritebird' WHERE id=$id");
-    
+
+  $_SESSION['username'] = $username;
 }
 
 if(isset($_POST['editprofilepic'])) {
-    
-     move_uploaded_file($_FILES['profilepic']['tmp_name'],
+
+	$oldprofilepic = 'images/profilepics/' . $currentprofilepic;
+	unlink($oldprofilepic); //deleting old profile pic
+
+	move_uploaded_file($_FILES['profilepic']['tmp_name'],
     "images/profilepics/" . $_FILES['profilepic']['name']);
         $profilePic=$_FILES['profilepic']['name'];
     
