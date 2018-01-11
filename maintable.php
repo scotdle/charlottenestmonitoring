@@ -89,33 +89,50 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
                             <ul class="nav navbar-nav navbar-left">
                                 <li><a href="#section1" class="smoothscroll">Home</a>
                                 </li>
-                                <li><a href="submission.php">Submit a Nest!</a>
-                                </li>
+                                <?php if(isset($_SESSION['id'])) {
+                                echo '<li><a href="submission.php">Submit a Nest!</a>
+                                </li>'; }
+                                ?>
                                 <li><a href="#section2" class="smoothscroll">View The Nest Table!</a>
                                 </li>
-								<li><a href="editprofile.php" class="useractions" > Edit Profile</a></li>
+                                <?php if(isset($_SESSION['id'])) {
+                                    echo '<li><a href="editprofile.php" class="useractions" > Edit Profile</a></li>
                                 <li><a href="logout.php" class="useractions">Logout</a>
-                                </li>
+                                </li> '; }
+                                else{
+                                    echo '<li><a href="login.php" class="useractions">Go to Login Page</a>
+                                </li>';
+
+                                    } ?>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="row mainpagesection1 no-gutter" id="section1">
-                    <div class="col-md-6 ">
 
 
-                        <?php 
-                        echo $profilepic;
-                        echo $hometext; 
-                        
+	              <div class="row mainpagesection1 no-gutter" id = "section1" >
+		              <?php if(isset($_SESSION['id'])) {
+                  echo  '<div class="col-md-6 " >';
+
+
+
+                        echo $profilepic .
+                         $hometext . '</div>';
+
+                        }else{
+
+			              echo  '<div class="col-md-6 " >'
+                                . $profilepic .
+                                '<h1>Hey stranger! <br> Register today! </h1>' .
+                                '</div>';
+		              }
                         ?>
-						
 
 
-                    </div>
+
                     <div class="col-md-6 databasefacts ">
-                        <?php 
-                    
+                        <?php
+
                     
                     
                     echo $nestsindatabase;
