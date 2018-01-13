@@ -87,8 +87,10 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
 
 
     <div class="loginpage col-lg-12">
-        <img src="images/logo.png" alt="logo" class="logo img-responsive center"><br>
-        <div class="loginpageform">
+
+        <img src="images/logosecondary.png" alt="logo" class=" img-responsive center "><br>
+    <div class="loginpageform">
+        <h1 class="loginpageheader">Welcome to Charlotte Nest Monitoring</h1>
             <form method="post">
 
                 <div class="formgroup">

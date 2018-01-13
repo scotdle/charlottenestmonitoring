@@ -50,7 +50,6 @@ font-size: 20px;
 text-align: center;
 background-image: url(../images/loginbackground.jpg);
 background-repeat: no-repeat;
-background-size: cover;
 text-decoration: none;
     
 }
@@ -63,6 +62,12 @@ text-align: center;
  width: 80%;
   margin: 0 auto; 
 border-radius: 15px;      
+}
+
+.loginpageheader {
+
+    color: orange;
+
 }
 
 .loginpage a{
@@ -409,7 +414,6 @@ position: relative;
 text-align: center;    
 background: rgba(255,255,255,1);
 background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
 background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
 background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
 background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -539,11 +543,6 @@ margin: 15px;
 }
 
 
-.nestingseason {
-padding-bottom:     
-    
-    
-}
 
 .editdelete a {
     

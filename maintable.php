@@ -81,7 +81,7 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
             <div class="col-md-12">
                 <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
                     <div class="container-fluid">
-                        <div class="navbar-header"><img src="images/logomaintable.png" alt="logo" class="navbar-brand">
+                        <div class="navbar-header"><img src="images/logosecondary.png" alt="logo" class="navbar-brand">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
                         </div>
