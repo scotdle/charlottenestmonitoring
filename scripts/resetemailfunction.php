@@ -1,16 +1,18 @@
 <?php
 
-function generateRandomString($length = 20) {
-	// This function has taken from stackoverflow.com
-    
-	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
+// TODO fix this function and make it more secure.
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+function generateRandomString() {
+$randomString = openssl_random_pseudo_bytes(16);
+$randomString= bin2hex($randomString);
+
+return $randomString;
     }
-    return md5($randomString);
-}
+
 
 function emailValidation($mysqli, $email) {
     
@@ -30,13 +32,15 @@ function emailValidation($mysqli, $email) {
 
 function sendEmail($token, $username, $to)
 {
-	require 'phpmailer/PHPMailerAutoload.php';
-	
+
+	require 'PHPMailer/src/Exception.php';
+	require 'PHPMailer/src/PHPMailer.php';
+	require 'PHPMailer/src/SMTP.php';
 	$mail = new PHPMailer;
 	$mail->setFrom('charlottenestmonitoring@gmail.com', 'Scooter C. | Founder of CNM');
 $mail->addAddress($to);
 $mail->Subject = 'Charlotte Nest Monitoring Password Recovery Instructions';
-$link = 'http://localhost/scotdle/charlottenestmonitoring/passwordresetpage.php?email='.$to.'&token='.$token . '&username='.$username;
+$link = 'http://localhost/charlottenestmonitoring/passwordresetpage.php?email='.$to.'&token='.$token . '&username='.$username;
 	$mail->Body    = "<b>Hello " . $username . "! </b><br><br>Forgot your password? no problem, just follow the link to reset it. <a href='$link' target='_blank'>Click here</a> to reset your password. If you are unable to click the link then copy the link below and paste in your browser to reset your password.<br><i>". $link."</i><br> As always, thanks for using CNM<b>- Scooter</b>";
 	
 	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

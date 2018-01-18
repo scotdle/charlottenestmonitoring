@@ -4,6 +4,9 @@ session_start();
 include("styles.php");
 include("credentialslocal.php");
 include("scripts/resetemailfunction.php");
+
+
+
  $alertmessage = "<a href=\"login.php\">I remembered my password!</a>";
         
     if(isset($_POST['submit'])){
@@ -18,12 +21,15 @@ include("scripts/resetemailfunction.php");
     if($checkEmail == "true"){
         
     $token = generateRandomString(); 
-     $alertmessage = "it worked";  
+     $alertmessage = "it worked";
+
+     echo $token;
+     echo $alertmessage;
         
-    $insertToken= mysqli_query($mysqli, "INSERT INTO recovery_keys (email, username, token) VALUES ('$email' , '$username' ,'$token') ");    
+    $insertToken= mysqli_query($mysqli, "INSERT INTO recovery_keys (email, username, token) VALUES ('$email' , '$username' ,'$token') ");
        
     $sendEmail = sendEmail($token, $username, $email);
-        
+
     if ($sendEmail == "success") {
         
     $alertmessage = "a password reset email has been sent to " . $email . " please check your spam folder!";    
@@ -40,9 +46,13 @@ $alertmessage = "message not sent";
 }
         
         
-    }  
-        
- }
+    }  else{
+	    $alertmessage = "it didn't work!";
+	    echo $alertmessage;
+    }
+
+
+    }
  
         
     
