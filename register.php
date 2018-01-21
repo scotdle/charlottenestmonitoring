@@ -36,8 +36,9 @@ window.setTimeout(function(){
             
            $registertext =  "<h1>Welcome " . $name.  "! Flying you to your HomePage!</h1>" .  "<br/>";
         
-        $_SESSION['name'] = $_POST['name'];
-     $_SESSION['username'] = $username; 
+        $_SESSION['name'] = $name;
+     $_SESSION['username'] = $username;
+
         echo "<script>
 window.setTimeout(function(){
 
@@ -52,7 +53,9 @@ window.setTimeout(function(){
 
     <div class="registerpage col-lg-12">
         <h2>Register</h2>
-
+	    <?php  echo $error;
+	    echo $registertext;
+	    ?>
         <div class="registerpageform">
             <form method="post" action="" enctype="multipart/form-data">
 
@@ -73,9 +76,7 @@ window.setTimeout(function(){
 				<input type="file" name="profilepic" class="img-responsive">
 
                 <input type="submit" name="submit" class="form-add-on submit" value="Submit &#xf2c6;"><br>
-                <?php  echo $error;
-            echo $registertext;
-?>
+
             </form>
 
         </div>

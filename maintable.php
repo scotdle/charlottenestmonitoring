@@ -7,14 +7,15 @@ include('credentialslocal.php');
 
 $username = $_SESSION['username'];
 $username = mysqli_real_escape_string($mysqli,$username);
-$result = mysqli_query($mysqli, "SELECT TRIM(name) AS name, TRIM(favoritebird) as favoritebird, TRIM(profilepic) as profilepic FROM users WHERE username= '$username'");
+$result = mysqli_query($mysqli, "SELECT TRIM(id) AS id, TRIM(name) AS name, TRIM(favoritebird) as favoritebird, TRIM(profilepic) as profilepic FROM users WHERE username= '$username'");
 while ($row=mysqli_fetch_assoc($result)) {
-    
+$id = $row['id'];
 $name= $row['name'];
 $favoritebird= $row['favoritebird'];
 $profilepicfile = $row['profilepic'];
- 
-    } 
+    }
+
+
 if (empty($profilepicfile))
 {
     
@@ -23,13 +24,13 @@ $_SESSION['profilepic'] = $profilepic;
     
 }else{
 
-    
-$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'img-circle profilepic' > <br>";    
-  $_SESSION['profilepic'] = $profilepic;   
+
+$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'img-circle profilepic' > <br>";
+  $_SESSION['profilepic'] = $profilepic;
 $_SESSION['profilepicfile'] = $profilepicfile;
-  
-    
-    
+
+
+
 }
 
 
@@ -89,13 +90,14 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
                             <ul class="nav navbar-nav navbar-left">
                                 <li><a href="#section1" class="smoothscroll">Home</a>
                                 </li>
-                                <?php if(isset($_SESSION['id'])) {
+                                <?php if(isset($id)) {
                                 echo '<li><a href="submission.php">Submit a Nest!</a>
+
                                 </li>'; }
                                 ?>
                                 <li><a href="#section2" class="smoothscroll">View The Nest Table!</a>
                                 </li>
-                                <?php if(isset($_SESSION['id'])) {
+                                <?php if(isset($id)) {
                                     echo '<li><a href="editprofile.php" class="useractions" > Edit Profile</a></li>
                                 <li><a href="logout.php" class="useractions">Logout</a>
                                 </li> '; }
@@ -111,7 +113,7 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
 
 
 	              <div class="row mainpagesection1 no-gutter" id = "section1" >
-		              <?php if(isset($_SESSION['id'])) {
+		              <?php if(isset($id)) {
                   echo  '<div class="col-md-6 " >';
 
 
@@ -122,7 +124,7 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
                         }else{
 
 			              echo  '<div class="col-md-6 " >'
-                                . $profilepic .
+                                . $profilepic . $id .
                                 '<h1>Hey stranger! <br> Register today! </h1>' .
                                 '</div>';
 		              }
@@ -203,7 +205,7 @@ while ( $nest = mysqli_fetch_assoc( $records ) ) {
 		                            echo "<td  data-label='Location:'>" . $nest['location'] . "</td>";
 		                            echo "<td  data-label='Description:'>" . $nest['description'] . "</td>";
 		                            echo "<td  data-label='Possible Species:'>" . $nest['possiblespecies'] . "</td>";
-                            if($_SESSION['id']===$nest['id']) {
+                            if($id===$nest['id']) {
 
 	                            echo "<td><a href=\"edit.php?id=$nest[nestid]\">Edit</a> // <a href=\"delete.php?id=$nest[nestid]\">Delete</a></td>";
                             }

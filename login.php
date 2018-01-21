@@ -34,6 +34,11 @@ window.setTimeout(function(){
     $logintext = "Username/password is incorrect.<br><a href='passwordresettoemail.php'>forgot your password?</a><br><a href='register.php'>Don't have an account?</a>";   
     
 }
+    }else{
+
+
+	   $nonaccounttext = '<a href="maintable.php" ><h2>view the public table without logging in</h2></a>';
+
     }
         
         
@@ -90,7 +95,6 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
 
         <img src="images/logosecondary.png" alt="logo" class=" img-responsive center "><br>
     <div class="loginpageform">
-        <h1 class="loginpageheader">Welcome to Charlotte Nest Monitoring</h1>
             <form method="post">
 
                 <div class="formgroup">
@@ -113,8 +117,7 @@ echo $accountcreation;                ?>
             </div>
             <div>
 
-                <a href="maintable.php" ><h2>view the public table without logging in</h2></a>
-
+<?php echo $nonaccounttext; ?>
             </div>
 
         </div>

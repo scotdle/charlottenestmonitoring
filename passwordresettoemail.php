@@ -21,11 +21,8 @@ include("scripts/resetemailfunction.php");
     if($checkEmail == "true"){
         
     $token = generateRandomString(); 
-     $alertmessage = "it worked";
 
-     echo $token;
-     echo $alertmessage;
-        
+
     $insertToken= mysqli_query($mysqli, "INSERT INTO recovery_keys (email, username, token) VALUES ('$email' , '$username' ,'$token') ");
        
     $sendEmail = sendEmail($token, $username, $email);
