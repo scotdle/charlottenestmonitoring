@@ -19,13 +19,13 @@ $profilepicfile = $row['profilepic'];
 if (empty($profilepicfile))
 {
     
-$profilepic = "<img src='images/profilepics/defaultprofilepic.png' class= 'img-circle profilepic' > <br>";
+$profilepic = "<img src='images/profilepics/defaultprofilepic.png' class= 'rounded-circle profilepic' > <br>";
 $_SESSION['profilepic'] = $profilepic;     
     
 }else{
 
 
-$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'img-circle profilepic' > <br>";
+$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'rounded-circle profilepic' > <br>";
   $_SESSION['profilepic'] = $profilepic;
 $_SESSION['profilepicfile'] = $profilepicfile;
 
@@ -80,37 +80,49 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-                    <div class="container-fluid">
-                        <div class="navbar-header"><img src="images/logosecondary.png" alt="logo" class="navbar-brand">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
-                        </div>
-                        <div class="collapse navbar-collapse navbar-menubuilder">
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a href="#section1" class="smoothscroll">Home</a>
-                                </li>
-                                <?php if(isset($id)) {
-                                echo '<li><a href="submission.php">Submit a Nest!</a>
 
-                                </li>'; }
-                                ?>
-                                <li><a href="#section2" class="smoothscroll">View The Nest Table!</a>
-                                </li>
-                                <?php if(isset($id)) {
-                                    echo '<li><a href="editprofile.php" class="useractions" > Edit Profile</a></li>
-                                <li><a href="logout.php" class="useractions">Logout</a>
-                                </li> '; }
-                                else{
-                                    echo '<li><a href="login.php" class="useractions">Go to Login Page</a>
-                                </li>';
 
-                                    } ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-bottom">
+    <img src="images/logosecondary.png" alt="logo" class="navbar-brand">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a href="#section1" class="smoothscroll nav-link">Home</a>
 
+            </li>
+
+            <li class="nav-item">
+                <a href="#section2" class="smoothscroll nav-link">View the Nest Table!</a>
+
+            </li>
+            <?php if(isset($id)) {
+           echo ' <li class="nav-item">
+                <a href="submission.php" class="nav-link"> Submit a Nest! </a>
+            </li> ' ;} ?>
+	        <?php if(isset($id)) {
+		        echo ' 
+                     <li class="nav-item">
+                <a class="nav-link useractions" href="editprofile.php">Edit Profile</a>
+            </li>
+                 <li class="nav-item">
+                <a class="nav-link useractions" href="logout.php" > Log out </a>
+            </li> ' ;} ?>
+
+
+        </ul>
+        <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+    </div>
+</nav>
+
+
+            </div>
+        </div>
+    </div>
 
 	              <div class="row mainpagesection1 no-gutter" id = "section1" >
 		              <?php if(isset($id)) {
@@ -123,7 +135,7 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
 
                         }else{
 
-			              echo  '<div class="col-md-6 " >'
+			              echo  '<div class="col-md-6" >'
                                 . $profilepic . $id .
                                 '<h1>Hey stranger! <br> Register today! </h1>' .
                                 '</div>';
@@ -132,7 +144,7 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
 
 
 
-                    <div class="col-md-6 databasefacts ">
+                    <div class="col-md-6 databasefacts">
                         <?php
 
                     
@@ -198,7 +210,7 @@ while ( $nest = mysqli_fetch_assoc( $records ) ) {
 
 		                            echo "</tr>";
 		                            echo "<tr>";
-		                            echo "<td data-label='Submitted By:' >" . "<img src='images/profilepics/" . $nest['profilepic'] . "'" . "class= 'img-circle submittedbypicture' > <br>" . $nest['username'] . "</td>";
+		                            echo "<td data-label='Submitted By:' >" . "<img src='images/profilepics/" . $nest['profilepic'] . "'" . "class= 'rounded-circle submittedbypicture' > <br>" . $nest['username'] . "</td>";
 		                            echo "<td  data-label='Date Submitted:' >" . $nest['datesubmitted'] . "<br> Last Edited: <br> " . $nest['lastedited'] . "</td>";
 		                            echo "<td data-label='Egg or Nestling:' >" . $nest['eggsornestlings'] . "</td>";
 		                            echo "<td  data-label='How Many:'>" . $nest['howmany'] . "</td>";
@@ -229,9 +241,7 @@ while ( $nest = mysqli_fetch_assoc( $records ) ) {
 
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
 
 <script type="text/javascript">
 var $rows = $('.tablesection ');
