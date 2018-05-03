@@ -105,7 +105,7 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
                     Password<br>
                     <input type="password" name="password" class="form-control form-add-on" required="required" placeholder="&#xf023;"><br>
                 </div>
-                <input type="submit" name="submit" class="form-add-on submit" value="Submit &#xf2c6;"><br>
+                <input type="submit" name="submit" class="form-add-on submit" value="Log In now!!! &#xf2c6;"><br>
             </form>
 
 
