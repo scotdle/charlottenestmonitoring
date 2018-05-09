@@ -7,7 +7,8 @@
 
 
 .form-control {
-font-size: 25px;    
+font-size: 25px;
+
     
     
 }
@@ -18,19 +19,49 @@ font-size: 55px;
     
 }
 
+.formgroup {
 
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size-adjust: 0.25;
+
+
+
+}
+
+.formheaders {
+font-family: 'Raleway';
+font-weight: 600;
+
+
+}
 .form-add-on {
-font-family:'FontAwesome','Fjalla One';  
+font-family:'FontAwesome','Fjalla One';
 text-indent: 10px;
-border-radius: 15px;
-border: 1px solid #add9f4;  
-background-color: white; 
+ color: cornflowerblue;
+border: none;
+    border-bottom: 1px solid;
+    background-color: transparent;
 height: 50px;
 text-align: center;
     
 }
 
+
+.formsubmit {
+    font-family:'FontAwesome','Raleway';
+
+    border: solid 1px;
+    border-radius: 15px;
+    color: cornflowerblue;
+    margin-bottom: 15px;
+
+
+}
+
+
 .logo {
+
 padding: 10px;    
     
     
@@ -41,10 +72,10 @@ padding: 10px;
 LOGIN PAGE STARTS
 */
 
-.loginpage{
-font-family: 'Fjalla One', sans-serif; 
+.loginsection{
+font-family: 'Raleway', sans-serif;
 position: relative;
-color: orange;
+color: cornflowerblue;
 min-height: 100%;
 font-size: 20px;
 text-align: center;
@@ -52,40 +83,69 @@ text-decoration: none;
     
 }
 
+.loginheader {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    padding-bottom: 30px;
+
+}
+
+
+
+  .greetingsection{
+      font-family: 'Fjalla One', sans-serif;
+      position: relative;
+      color: cornflowerblue;
+      background-color: rgba(174, 217, 244, 0.58);
+
+      min-height: 100%;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+
+  }
+
 .loginpagecontainer {
 
-    background-image: url(../images/nestlings.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: rgba(134,174,204,1);
+    background: -moz-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(134,174,204,1)), color-stop(75%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(134,174,204,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86aecc', endColorstr='#ffffff', GradientType=0 );
+z-index: 0;
 
 
 
 }
-.loginpageform  {
-    
-background-color: rgba(255, 255, 255, 0.74);
-background-position: 10px 25px;
-padding: 10px;
-width: 80%;
-text-align: center;
+.loginpageform {
+
+    background-color: rgba(255, 255, 255, 0.74);
+    padding: 10px;
+    width: 400px;
+    text-align: center;
     margin: 0 auto;
-border-radius: 15px;      
+    border-radius: 15px;
+    border: solid 0.5px #007AC4;
+    z-index: 1;
+    font-size-adjust: 0.25;
+
+
+}
+.loginpage a, h2{
+
+    color: cornflowerblue;
+    font-size-adjust: 0.25;
+
+
 }
 
-.loginpageheader {
-
-    color: orange;
-
-}
-
-.loginpage a{
-color: cornflowerblue;    
-    
-}
 
  .loginpage a:hover {
 text-decoration: none;
- color:black; 
+ color:#add9f4;
   -o-transition:color .2s ease-out, background 1s ease-in;
   -ms-transition:color .2s ease-out, background 1s ease-in;
   -moz-transition:color .2s ease-out, background 1s ease-in;
@@ -104,6 +164,34 @@ color:cornflowerblue;
 .img-responsive {
     margin: 0 auto;
 }
+
+button {
+    font-family: 'FontAwesome', 'Fjalla One';
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+border-radius: 15px;
+ border: solid 1px orange;
+    margin-bottom: 15px;
+
+}
+
+.submit {
+    color: cornflowerblue;
+  border: none;
+}
+
+
+.cityimage {
+    position: relative;
+    z-index: 0;
+    bottom: 50px;
+}
 /*
 LOGIN PAGE ENDS
 */
@@ -113,9 +201,9 @@ REGISTER PAGE STARTS
 */
 
 .registerpage{
-font-family: 'Fjalla One', sans-serif; 
+font-family: 'Raleway', sans-serif;
 position: relative;
-color: orange;
+color: cornflowerblue;
 min-height: 100%;    
 font-size: 20px; 
 text-align: center;
@@ -123,24 +211,21 @@ background-image: url(../images/registerbackground.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 text-decoration: none;
-padding: 15px;    
+padding: 15px;
 }
 
 .registerpageform  {
-    
-background-color: rgba(255, 255, 255, 0.74);
-background-position: 10px 25px;    
-padding: 10px;  
+
+background-color: rgba(255, 255, 255, 0.85);
+background-position: 10px 25px;
+padding: 10px;
 text-align: center;
   margin: auto;
-    
-    border-radius: 15px;   
+
+    border-radius: 15px;
 }
 
-.registerpage a{
-color: black;    
-    
-}
+
 
  .registerpage a:hover {
 text-decoration: none;
@@ -213,9 +298,9 @@ EDIT PAGE STARTS
 */
 
 .editpage, .addpage{
-font-family: 'Fjalla One', sans-serif; 
+font-family: 'Raleway', sans-serif;
 position: relative;
-color: orange;
+color: cornflowerblue;
 min-height: 100%;    
 font-size: 20px; 
 text-align: center;
@@ -223,8 +308,8 @@ background: url(../images/loginbackground.jpg)no-repeat center center;
 background-repeat: no-repeat;
 background-size: cover;
 text-decoration: none;
-padding: 15px;    
-    
+padding: 15px;
+
 }
 .editpageform, .addpageform  {
     
@@ -312,12 +397,8 @@ FOOTER STARTS
 FOOTER ENDS
 */
 
-.submit {
-    font-family:'FontAwesome','Fjalla One'; 
-    
-}
 
-.submit:hover {
+.formsubmit:hover {
 text-decoration: none;
  color:#add9f4; 
   -o-transition:color .2s ease-out, background 1s ease-in;
@@ -533,47 +614,85 @@ float:right;
 
  /* Custom, iPhone Retina */ 
     @media only screen and (min-width : 320px) {
+
+
+        }
         
         
-        
-    }
+
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
+
 
     }
 
 
  /* Smartphone  */
-   @media only screen and (min-width : 240px)  and (max-width : 868px) {
-      #container{
-          width: 100%;
-      }
-      table.gridtable {
-          width: 100%;
-      }		
-      table th {
-          display: none;
-      }
-      table tr {
-          display: block;
-          
-      }
-      table td {
-          display: block;
-          text-align: right;
-          font-size: 20px;
-          margin-bottom: 1px;
-          min-height: 14px
-      }
-      table td:before {
-          content: attr(data-label);
-          float: left;
-          
-      }
+   @media only screen and (min-width : 240px)  and (max-width : 968px) {
+       #container {
+           width: 100%;
+       }
+
+       table.gridtable {
+           width: 100%;
+       }
+
+       table th {
+           display: none;
+       }
+
+       table tr {
+           display: block;
+
+       }
+
+       table td {
+           display: block;
+           text-align: right;
+           font-size: 20px;
+           margin-bottom: 1px;
+           min-height: 14px
+       }
+
+       table td:before {
+           content: attr(data-label);
+           float: left;
+
+       }
+
+       .loginpageform {
+
+           background-color: rgba(255, 255, 255, 0.74);
+           padding: 10px;
+           width: 95%;
+           text-align: center;
+           margin: 0 auto;
+           border-radius: 15px;
+           border: solid 0.5px #007AC4;
+
+       }
+
+       .loginheader {
+           font-family: 'Raleway', sans-serif;
+           font-weight: 900;
+           padding-bottom: 30px;
+           font-size: 20px;
+
+       }
+
+       .form-add-on {
+           font-family: 'FontAwesome', 'Fjalla One';
+           text-indent: 10px;
+           color: cornflowerblue;
+           border: none;
+           border-bottom: 1px solid;
+           background-color: transparent;
+           height: 30px;
+           text-align: center;
+
+       }
    }
-
-
 
 
 /* MAIN TABLE CONTENT ENDS */

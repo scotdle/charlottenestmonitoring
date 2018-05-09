@@ -25,7 +25,7 @@ $_SESSION['profilepic'] = $profilepic;
 }else{
 
 
-$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'rounded-circle profilepic' > <br>";
+$profilepic = "<img src='images/profilepics/". $profilepicfile ."'" . "class= 'rounded-circle  profilepic' > <br>";
   $_SESSION['profilepic'] = $profilepic;
 $_SESSION['profilepicfile'] = $profilepicfile;
 
@@ -101,21 +101,23 @@ $nestlingsindatabase=  $row['eggsornestlings']. " nests with nestlings";
             <?php if(isset($id)) {
            echo ' <li class="nav-item">
                 <a href="submission.php" class="nav-link"> Submit a Nest! </a>
-            </li> ' ;} ?>
-	        <?php if(isset($id)) {
-		        echo ' 
+            </li> 
                      <li class="nav-item">
                 <a class="nav-link useractions" href="editprofile.php">Edit Profile</a>
             </li>
                  <li class="nav-item">
                 <a class="nav-link useractions" href="logout.php" > Log out </a>
-            </li> ' ;} ?>
+            </li> ' ;} else {
+
+               echo '<a class="nav-link useractions" href="login.php" > Go To Login </a>' .
+	             '<a class="nav-link useractions" href="register.php" > I want to make an account </a>';
+
+
+            } ?>
 
 
         </ul>
-        <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
+
     </div>
 </nav>
 

@@ -3,7 +3,7 @@ session_start();
 include( 'styles.php' );
 include( 'credentialslocal.php' );
 
-$logintext = "<a href='register.php'>Don't have an account?</a>";
+$logintext = "<button class='loginpage'><a href='register.php'>Don't have an account?</a></button>";
 if ( isset( $_POST['submit'] ) ) {
 
 	$username = $_POST['username'];
@@ -30,13 +30,13 @@ window.setTimeout(function(){
 
 }, 3000); </script>";
 	} else {
-		$logintext = "Username/password is incorrect.<br><a href='passwordresettoemail.php'>forgot your password?</a><br><a href='register.php'>Don't have an account?</a>";
+		$logintext = "Username/password is incorrect.<br><button><a href='passwordresettoemail.php' class='loginpage'>forgot your password?</button></a><br><button><a href='register.php' class='loginpage'>Don't have an account?</buttona></a>";
 
 	}
 } else {
 
 
-	$nonaccounttext = '<a href="maintable.php" ><h2>view the public table without logging in</h2></a>';
+	$nonaccounttext = '<button class="loginpage"><a href="maintable.php">view the public table without logging in</button></a>';
 
 }
 
@@ -90,39 +90,46 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
         <div class="row h-100">
             <div class="col-lg-12 h-100">
                 <div class="row h-100">
-                    <div class="loginpage col-md-6">
+                    <div class="loginsection col-md-12">
 
-                        <img src="images/logosecondary.png" alt="logo" class=" img-responsive center "><br>
+
                         <div class="loginpageform">
+                            <img src="images/logosecondary.png" alt="logo" class=" img-responsive navbar-brand "><br>
+                            <h2 class="loginheader"> found a nest? <br> sign in to record it!</h2>
                             <form method="post">
 
                                 <div class="formgroup">
-                                    Username<br>
                                     <input type="text" name="username" required="required"
                                            class="form-control form-add-on"
-                                           placeholder="&#xf2be; "><br>
+                                           placeholder="&#xf2be; ">
+                                    <h3> username</h3><br>
                                 </div>
-                                <div class="form-group">
-                                    Password<br>
+                                <div class="formgroup">
+
                                     <input type="password" name="password" class="form-control form-add-on"
                                            required="required"
-                                           placeholder="&#xf023;"><br>
+                                           placeholder="&#xf023;">
+                                    <h3>password</h3><br>
                                 </div>
-                                <input type="submit" name="submit" class="form-add-on submit"
+                                <input type="submit" name="submit" class="formsubmit submit"
                                        value="Log In &#xf2c6;"><br>
+	                            <?php echo $logintext;
+	                            '<hr>';
+	                            echo $nonaccounttext;
+
+	                            ?>
                             </form>
+
+                        </div>
+						<?php
+						?>
+
+                        <div class="cityimage img-fluid">
+                            <img src="images/charlotteoutline.png" alt="charlotte">
 
                         </div>
                     </div>
 
-
-                    <div class="loginalerts loginpage col-md-6 ">
-                        <h1>Welcome to Charlotte Nest Monitoring...</h1>
-						<?php echo $logintext;
-						echo $accountcreation;
-						echo $nonaccounttext;
-						?>
-                    </div>
 
                 </div>
 
@@ -130,11 +137,7 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
 
         </div>
     </div>
-    <script>
-        $.validate({
-            modules: 'html5'
-        });
-    </script>
+
 
 
 <?php include( 'endpage.php' ); ?>
