@@ -3,7 +3,12 @@
             margin: 0;
         }
 
+  .boldheader {
+      font-family: 'Raleway';
+      font-weight: 900;
+      font-size: 50px;
 
+  }
 
 
 .form-control {
@@ -173,7 +178,6 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
 border-radius: 15px;
  border: solid 1px orange;
@@ -361,9 +365,10 @@ EDIT PAGE ENDS
 DELETE PAGE STARTS
 */
 .deleterecord{
-font-family: 'Fjalla One', sans-serif; 
+font-family: 'Raleway', sans-serif;
 position: relative;
-color: orange;
+color: cornflowerblue;
+font-weight: 900;
 min-height: 100%;    
 font-size: 20px; 
 text-align: center;
@@ -429,6 +434,7 @@ padding: 5px;
       color: rgba(119, 119, 119, 1);
       font-size: 20px;
       background-color: #add9f4;
+      padding: 0;
 }
 
 
@@ -441,8 +447,7 @@ padding: 5px;
 
 .mainpagesection1 {
     position: relative;
-   font-family: 'Fjalla One', sans-serif; 
-    font-size: 55px; 
+    font-size: 55px;
     color: #add9f4;
     text-align: center;
     line-height: 100px;
@@ -481,14 +486,14 @@ padding-bottom: 70px;
 }
 
 #searchTable{
-font-family: 'Fjalla One', sans-serif;     
+font-family: 'Raleway', sans-serif;
 height: 70px;
 width: 100%;
 float: left;
 font-size: 30px;
 text-align: center;
-background-color: rgba(174, 217, 244, 0.58);
-color: cornflowerblue;
+background-color: white;
+color: black;
    border-style: solid;
     border-color: black;    
     
@@ -517,7 +522,7 @@ text-decoration: none;
   transition:color .2s ease-out, background 1s ease-in;
     }
 th, td {
-    font-family: 'Oswald';
+    font-family: 'Raleway';
     border: solid black 1px; 
     font-size: 20px;
 padding: 5px;
@@ -548,37 +553,25 @@ height: 100px;
     }
 
 
-.tablesection {
-padding: 10px;    
-    
-    
-    
-    
-}
 
-.tablesectionstyling  {
+.tablesection  {
+
 
     border: 1px solid black;
     width: 97%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 10px 10px;
-    
-    
+    padding-bottom: 30px;
+
 }
 
 .tabledescription {
     font-size: 18px;
-    
-    
+
 }
 
-#nestTable {
-padding-bottom: 20px;    
-    
-    
-    
-}
+
 
 .no-gutter > [class*='col-'] {
     padding-right: 0;
@@ -591,7 +584,8 @@ background-color: rgba(255, 255, 255, 0.49);
 	
 }
 
-.databasefacttext { 
+.databasefacttext {
+font-family: Raleway;
 border-bottom: 1px solid #add9f4;
 margin: 15px;
     
@@ -673,11 +667,12 @@ float:right;
 
        }
 
-       .loginheader {
-           font-family: 'Raleway', sans-serif;
+       .boldheader {
+           font-family: 'Raleway';
            font-weight: 900;
            padding-bottom: 30px;
            font-size: 20px;
+           color: cornflowerblue;
 
        }
 

@@ -27,6 +27,11 @@ if ( isset( $_POST['submit'] ) ) {
 	$username     = $_POST['username'];
 	$favoritebird = $_POST['favoritebird'];
 
+	if($username === $row['username']) {
+	    echo "thats already a username!";
+
+    }
+
 	$editProfileSuccess = 'Profile Edited!';
 
 	$name = preg_replace( '/\s+/', '', $name );
@@ -36,6 +41,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 	$_SESSION['username'] = $username;
 }
+
 
 if ( isset( $_POST['editprofilepic'] ) ) {
 
@@ -74,9 +80,10 @@ if ( isset( $_POST['editpassword'] ) ) {
     <div class="container-fluid">
         <div class="row">
             <div class="registerpage col-lg-12">
-                <h2 class="loginheader">Edit Profile</h2>
 
                 <div class="registerpageform">
+                    <h2 class="boldheader">Edit Profile</h2>
+
                     <form method="post" action="">
 
 
@@ -106,7 +113,7 @@ if ( isset( $_POST['editpassword'] ) ) {
 
                         <form method="post" enctype="multipart/form-data">
 
-                            <h2 class="loginheader">Edit Profile Picture</h2>
+                            <h2 class="boldheader">Edit Profile Picture</h2>
 
                             <input type="file" name="profilepic" class="img-responsive">
 							<?php echo "<img src='images/profilepics/" . $currentprofilepic . "'" . " class= 'img-circle profilepic' > " ?>
@@ -121,7 +128,7 @@ if ( isset( $_POST['editpassword'] ) ) {
 
                         <form method="post">
 
-                            <h2 class="loginheader">Edit Password</h2>
+                            <h2 class="boldheader">Edit Password</h2>
 
                             <input type="password" name="password" required="required" class="form-control form-add-on"><br>
                             <button><input type="submit" name="editpassword" class="submit" value="Change Password &#xf023;"></button><br>

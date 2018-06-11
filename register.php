@@ -51,7 +51,7 @@ window.setTimeout(function(){
 
     <div class="registerpage  col-lg-12">
     <div class="registerpageform">
-        <h2 class="loginheader">Howdy! <br> go ahead and fill out the form below and you'll be tracking nests in no time!</h2>
+        <h2 class="boldheader">Howdy! <br> go ahead and fill out the form below and you'll be tracking nests in no time!</h2>
 		<?php 		echo $registertext;
 
 		echo $error;
@@ -77,15 +77,16 @@ window.setTimeout(function(){
             <div class="row">
 
                 <div class="col-lg-6">
-                    <h2 class="loginheader">Favorite Bird</h2><br>
+                    <h2 class="boldheader">Favorite Bird</h2><br>
                     <input type="text" name="favoritebird" required="required" class="form-control form-add-on"
                            placeholder="&#xf004;"><br>
                 </div>
 
                 <div class="col-lg-6">
 
-                    <h2 class="loginheader">Profile Picture</h2><br><br>
-                    <input type="file" name="profilepic" class="img-responsive"><br>
+                    <h2 class="boldheader">Profile Picture</h2><br><br>
+                    <input type="file" name="profilepic" class="img-responsive" id="profilePicUpload" accept="image/gif, image/jpeg, image/png"><br>
+                    <img src="" class="rounded-circle submittedbypicture" id="output_image"/>
 
                 </div>
             </div>

@@ -95,7 +95,7 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
 
                         <div class="loginpageform">
                             <img src="images/logosecondary.png" alt="logo" class=" img-responsive navbar-brand "><br>
-                            <h2 class="loginheader"> found a nest? <br> sign in to record it!</h2>
+                            <h2 class="boldheader"> found a nest? <br> sign in to record it!</h2>
                             <form method="post">
 
                                 <div class="formgroup">
@@ -124,7 +124,7 @@ $accountcreation ="<a href='register.php'>Don't have an account?</a>";
 						<?php
 						?>
 
-                        <div class="cityimage img-fluid">
+                        <div class="cityimage d-none d-sm-block">
                             <img src="images/charlotteoutline.png" alt="charlotte">
 
                         </div>
