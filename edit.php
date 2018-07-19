@@ -9,8 +9,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM nesttable WHERE nestid=$nestid");
       while ($row=mysqli_fetch_assoc($result))
 
       {   
-    $userwhosubmitted = $row['userwhosubmitted'];      
-    $eggsornestlings= $row['eggsornestlings'];      
+    $userid = $row['userid'];
+    $eggsornestlings= $row['eggsornestlings'];
       $howmany =$row['howmany'];
     $location =$row['location'];
     $description =$row['description'];
@@ -40,7 +40,7 @@ window.setTimeout(function(){
     
 }
     */
-if($_SERVER['REQUEST_METHOD']=='POST') {
+if($_SERVER['REQUEST_METHOD']=='POST' and $_SESSION['id'] === $userid) {
     
     $nestid = $_GET['id'];
 
@@ -60,6 +60,11 @@ $possiblespecies = mysqli_real_escape_string($mysqli, $possiblespecies);
  
 $updated = '<a href="maintable.php#nesttable"> Done Editing? Head back to the Nest Table</a>';  
     
+} else{
+
+	$updated = '<a href="maintable.php#nesttable"> Sorry, no editing another users nest!</a>';
+
+
 }
 ?>
 

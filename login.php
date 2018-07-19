@@ -17,6 +17,7 @@ if ( isset( $_POST['submit'] ) ) {
 	if ( password_verify( $password, $row['password'] ) ) {
 
 		$_SESSION["id"]       = $row['id'];
+		$id                   = $_SESSION["id"]; // putting session id into another variable 
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION["name"]     = $row['name'];
 		$name                 = $_SESSION['name'];
@@ -36,7 +37,7 @@ window.setTimeout(function(){
 } else {
 
 
-	$nonaccounttext = '<button class="loginpage"><a href="maintable.php">view the public table without logging in</button></a>';
+	$nonaccounttext = '<button class="loginpage"><a href="maintable.php"><h3 class="loginoptions">view the public table without logging in</h3></button></a>';
 
 }
 

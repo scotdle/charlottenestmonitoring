@@ -4,12 +4,11 @@ ini_set( 'display_errors', 1 );
 error_reporting( - 1 );
 include( "styles.php" );
 include( "credentialslocal.php" );
-$username            = $_SESSION['username'];
 $editProfileSuccess  = '';
 $editPasswordSuccess = '';
+$id = $_SESSION['id'];
 
-
-$result = mysqli_query( $mysqli, "SELECT * FROM users WHERE username='$username'" );
+$result = mysqli_query( $mysqli, "SELECT * FROM users WHERE id= $id" );
 while ( $row = mysqli_fetch_assoc( $result ) ) {
 	$id                = $row['id'];
 	$name              = $row['name'];
@@ -18,32 +17,31 @@ while ( $row = mysqli_fetch_assoc( $result ) ) {
 	$favoritebird      = $row['favoritebird'];
 	$currentprofilepic = $row['profilepic'];
 
+}
+
+
+	if (isset( $_POST['editprofile'] )) {
+
+		$name         = $_POST['name'];
+		$username     = $_POST['username'];
+		$favoritebird = $_POST['favoritebird'];
+
+
+
+		$editProfileSuccess = 'Profile Edited!';
+
+		$name = preg_replace( '/\s+/', '', $name );
+
+		mysqli_query( $mysqli, "UPDATE users SET name= '$name', username= '$username', favoritebird= '$favoritebird' WHERE id= $id" );
+
+		$_SESSION['username'] = $username;
 
 }
 
 
-if ( isset( $_POST['submit'] ) ) {
-	$name         = $_POST['name'];
-	$username     = $_POST['username'];
-	$favoritebird = $_POST['favoritebird'];
-
-	if($username === $row['username']) {
-	    echo "thats already a username!";
-
-    }
-
-	$editProfileSuccess = 'Profile Edited!';
-
-	$name = preg_replace( '/\s+/', '', $name );
 
 
-	mysqli_query( $mysqli, "UPDATE users SET name= '$name', username= '$username', favoritebird= '$favoritebird' WHERE id=$id" );
-
-	$_SESSION['username'] = $username;
-}
-
-
-if ( isset( $_POST['editprofilepic'] ) ) {
+if (isset( $_POST['editprofilepic'] )) {
 
 	$oldprofilepic = 'images/profilepics/' . $currentprofilepic;
 	unlink( $oldprofilepic ); //deleting old profile pic
@@ -65,7 +63,7 @@ if ( isset( $_POST['editprofilepic'] ) ) {
 }
 
 
-if ( isset( $_POST['editpassword'] ) ) {
+if (isset( $_POST['editpassword'] )) {
 
 	$password      = $_POST['password'];
 	$storePassword = password_hash( $password, PASSWORD_BCRYPT, array( 'cost' => 10 ) );
@@ -84,22 +82,24 @@ if ( isset( $_POST['editpassword'] ) ) {
                 <div class="registerpageform">
                     <h2 class="boldheader">Edit Profile</h2>
 
-                    <form method="post" action="">
+                    <form method="post">
 
 
                         Name<br>
                         <input type="text" name="name" required="required" class="form-control form-add-on"
-                               value="<?php echo $name; ?> "><br> Username
+                               value="<?php echo $name; ?> ">
+
+                        <br> Username
                         <br>
                         <input type="text" name="username" required="required" class="form-control form-add-on"
                                value="<?php echo $username; ?>">
                         <br>
                         Favorite Bird<br>
                         <input type="text" name="favoritebird" required="required" class="form-control form-add-on"
-                               value="<?php echo $favoritebird; ?>"><br>
+                               value="<?php echo $favoritebird; ?>"> <br>
 
 
-                        <button><input type="submit" name="submit" class="submit" value="Submit &#xf2c6;"><br></button>
+                        <button><input type="submit" name="editprofile" class="submit" value="Submit &#xf2c6;"><br></button>
 						<?php echo $editProfileSuccess; ?>
 
                     </form>
